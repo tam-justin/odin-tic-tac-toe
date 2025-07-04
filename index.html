@@ -11,27 +11,59 @@
     
     <!-- Header -->
     <div class="header">
-        <div class = "title">Tic Tac Toe!</div>
-        <div class = "desc">Play a fun game of tic tac toe!</div>
+        <div class = "wrapper">
+            <div class = "title">Tic Tac Toe!</div>
+            <div class = "desc">Play a fun game of tic tac toe!</div>
+        </div>
+        <div class="help-section">
+            <div class="how-to hidden">Enter player's names on the left side. If no name is given, players will be named Player 1 & 2. To start the game, press the start game button. The first player's turn will be chosen at random. When it is your turn, your marker (X or O) will become green. Make your move by clicking on a square. If at any point, you wish to restart the game, click restart game.</div>
+            <svg class = "question-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11,18H13V16H11V18M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,6A4,4 0 0,0 8,10H10A2,2 0 0,1 12,8A2,2 0 0,1 14,10C14,12 11,11.75 11,15H13C13,12.75 16,12.5 16,10A4,4 0 0,0 12,6Z" fill = "currentColor"/></svg>
+        </div>
     </div>
     
     <!-- Body -->
     <div class = "body">
-        <!-- Player 1 Side -->
+        <!-- Player Input/Marker Section-->
         <div class="left-side">
-            <label for="player1-name">Enter Player 1's Name</label>
-            <input type="text" class = "nameInput" name = "player1-name">
+            <!-- Player 1 Section -->
+            <div class = "player1-section">
+                <div class = "nameQ">Enter Player 1's Name</div>
+                <div class="player1-input">
+                    <input type="text" class = "nameInput" name = "player1-name">
+                    <button type = "button" class = "add-name" id = "player1-name">Done</button>
+                </div>
+                <div class = "marker circle"></div>
+            </div>
+
+            <!-- Player 2 Section -->
+            <div class = "player2-section">
+                <div class = "nameQ">Enter Player 2's Name</div>
+                <div class="player2-input">
+                    <input type="text" class = "nameInput" name = "player2-name">
+                    <button type = "button" class = "add-name" id = "player2-name">Done</button>
+                </div>
+                <div class="marker x">&#x2717</div>
+            </div>
         </div>
         
         <!-- Board -->
         <div class = "board">
-
+            <div class = "tile" id = "tile-1"></div>
+            <div class = "tile" id = "tile-2"></div>
+            <div class = "tile" id = "tile-3"></div>
+            <div class = "tile" id = "tile-4"></div>
+            <div class = "tile" id = "tile-5"></div>
+            <div class = "tile" id = "tile-6"></div>
+            <div class = "tile" id = "tile-7"></div>
+            <div class = "tile" id = "tile-8"></div>
+            <div class = "tile" id = "tile-9"></div>
         </div>
 
-        <!-- Player 2 Side -->
+
         <div class="right-side">
-            <label for="player1-name">Enter Player 2's Name</label>
-            <input type="text" class = "nameInput" name = "player2-name">
+            <div class = "error-message"></div>
+            <button id = "start-button">Start Game</button>
+            <button id = "restart-button">Restart Game</button>
         </div>
     </div>
 
