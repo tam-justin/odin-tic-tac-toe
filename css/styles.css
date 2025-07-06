@@ -40,9 +40,7 @@ body {
 .help-section {
     display: flex;
     gap: 10px;
-    align-items: center;
-    justify-content: center;
-    margin-left: auto;
+    justify-content: flex-end;
     grid-column: 3;
 }
 
@@ -53,6 +51,7 @@ body {
     background-color: rgba(0, 0, 0, .4);
     border-radius: 50px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, .5);
+    align-self: center;
 }
 
 .question-mark:hover {
@@ -63,15 +62,17 @@ body {
     display: flex;
     background-color: rgba(0, 0, 0, .5);
     padding: 10px;
-    max-width: 400px;
     color: white;
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+    flex: 1;
+    max-width: 450px;
 }
 
 .body {
     display: grid;
     grid-template-columns: auto 1fr auto;
     padding: 20px;
+    margin-bottom: 20px;
 }
 
 .left-side, .right-side {
@@ -83,7 +84,6 @@ body {
     flex-wrap: wrap;
     width: clamp(200px, 25vw, 30vw);
     height: 100%;
-    justify-content: center;
     align-items: center;
 }
 
@@ -97,12 +97,16 @@ body {
     gap: 20px;
 }
 
+.nameQ {
+    align-self: center;
+}
+
 .marker {
     align-self: center;
 }
 
 .right-side {
-    gap: 50px;
+    gap: 20px;
 }
 
 #start-button {
@@ -153,7 +157,13 @@ body {
 
 .error-message {
     font-size: 25px;
+    font-weight: bold;
     color: red;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .nameInput {
@@ -171,6 +181,7 @@ body {
     padding: 5px;
     height: 31px;
     border: 3px solid black;
+    width: 50px;
 }
 
 .add-name:active {
@@ -213,6 +224,70 @@ body {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
     color: white;
     font-size: 20px;
+}
+
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, .3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.results {
+    border: 4px solid black;
+    border-radius: 8px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, .8);
+    height: 50%;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    overflow: hidden;
+}
+
+.results .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    gap: 1em;
+    height: 100%;
+    width: 100%;
+}
+
+.results .congrats {
+    font-size: 5em;
+}
+
+.results .winner {
+    font-size: 4em;
+}
+
+.results .text {
+    font-size: 3em;
+}
+
+.results .close-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    background-color: white;
+    font-size: 30px;
+    border: none;
+}
+
+.results .close-button:hover {
+    transform: scale(1.3);
+}
+
+.results .close-button:active {
+    transform: translateY(-3px);
 }
 
 .footer .odin {
