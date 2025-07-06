@@ -1,6 +1,6 @@
 const game = (function gameController(){
     let board = new Array(9);
-    let marker = "X";
+    let marker = "";
     let started = false;
     let winner;
     let player1Ready = false;
@@ -48,6 +48,7 @@ const game = (function gameController(){
     const start = () => {
         //Flag that the game has begun, set up the event listeners.
         started = true;
+        marker = (Math.random() < 0.5 ? "X" : "O");
         addTileListeners();
 
         // Disable the user name inputs.
@@ -83,7 +84,6 @@ const game = (function gameController(){
         game.player2Ready = false;
         game.player1 = undefined;
         game.player2 = undefined;
-        marker = "X";
         game.winner = undefined;
     }
 
