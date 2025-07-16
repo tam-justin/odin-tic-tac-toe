@@ -80,6 +80,7 @@ const game = (function gameController(){
         game.board = new Array(9);
         display.updateBoard();
         display.reset();
+        removeTileListeners();
         game.player1Ready = false;
         game.player2Ready = false;
         game.player1 = undefined;
